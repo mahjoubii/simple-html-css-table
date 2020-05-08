@@ -1,3 +1,4 @@
+// main container
 .parent {
   position: relative;
   background: var(--secondary);
@@ -7,3 +8,50 @@
   margin-top: 8%;
   border-radius: 4px;
 }
+
+// search bar content
+.search-bar {
+  position: relative;
+  margin-top: 20px auto;
+  padding: 12px 10px 12px 20px;
+  }
+
+.add-button {
+  background-color: #008CBA;
+  width: 180px;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  padding: 12px 10px 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+input[type=text] {
+  position: absolute;
+  width: 300px;
+  top: 15px;
+  left: 60px;
+  border: 2px solid #DAE1Ec;
+  border-radius: 3px;
+  font-size: 16px;
+  background-color:#DAE1Ec;
+  background-repeat: no-repeat;
+  padding: 12px 10px 12px 20px;
+  margin-left: 10px;
+}
+
+.filter-button {
+  position: absolute;
+  top: 16px;
+  border: 2px solid #DAE1Ec;
+  border-radius: 3px;
+  background-color: var(--secondary);
+  background-repeat: no-repeat;
+  padding: 12px 10px 12px 10px;
+  }
