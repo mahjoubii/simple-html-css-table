@@ -4,4 +4,45 @@
     <input type="text" placeholder="Search">
     <button type="button" class="add-button">+ Add Customer</button>
   </div>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+
+        </tr>
+        <tr>
+          <th class="container">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </th>
+          <th>NAME</th>
+          <th>DESCRIPTION</th>
+          <th>RATE</th>
+          <th>BALANCE</th>
+          <th>DEPOSIT</th>
+          <th>STATUS</th>
+          <th></th>
+          <th>...</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of loadedCustomers">
+          <td class="container">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </td>
+          <td>{{ customer.name }}</td>
+          <td>{{ customer.company.catchPhrase }}</td>
+          <td>{{rate}}</td>
+          <td>{{ customer.address.geo.lng}}</td>
+          <td>{{deposit}}</td>
+          <td>{{deposit}}</td>
+          <td>{{deposit}}</td>
+          <td>{{deposit}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <p></p>
+      </tfoot>
+    </table>
 </div>
