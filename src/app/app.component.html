@@ -5,59 +5,63 @@
     <button type="button" class="add-button">+ Add Customer</button>
   </div>
 
-    <table class="content-table">
-      <thead>
-        <tr>
-          <th class="container">
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </th>
-          <th>NAME</th>
-          <th>DESCRIPTION</th>
-          <th>RATE</th>
-          <th>BALANCE</th>
-          <th>DEPOSIT</th>
-          <th>STATUS</th>
-          <th></th>
-          <th>...</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let customer of loadedCustomers">
-          <td class="container">
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </td>
-          <td>
-            {{ customer.name }} <br>
-            <span>5684236583</span>
-          </td>
-          <td>
-            Lorem ipsum dolor sit<br>
-            <span>amet, consectetur...</span>
-          </td>
-          <td>
-            {{rate}} <br>
-            <span>INR</span>
-          </td>
-          <td>
-            {{ customer.address.geo.lng}} <br>
-            <span>INR</span>
-          </td>
-          <td>
-            {{deposit}} <br>
-            <span>INR</span>
-          </td>
-          <td>
-            <a class="avtive">active</a>
-          </td>
-          <td>E</td>
-          <td>D</td>
-          <td>...</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <p></p>
-      </tfoot>
-    </table>
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th class="container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </th>
+        <th>NAME</th>
+        <th>DESCRIPTION</th>
+        <th>RATE</th>
+        <th>BALANCE</th>
+        <th>DEPOSIT</th>
+        <th>STATUS</th>
+        <th></th>
+        <th>...</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of loadedCustomers">
+        <td class="container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </td>
+        <td>
+          {{ customer.name }} <br>
+          <span>5684236583</span>
+        </td>
+        <td>
+          Lorem ipsum dolor sit<br>
+          <span>amet, consectetur...</span>
+        </td>
+        <td>
+          {{rate}} <br>
+          <span>INR</span>
+        </td>
+        <td *ngIf="customer.address.geo.lng < 0">
+          <span [class.nigative]="customer.address.geo.lng < 0">{{ customer.address.geo.lng}}</span> <br>
+          <span>INR</span>
+        </td>
+        <td *ngIf="customer.address.geo.lng >= 0">
+          <span [class.positive]="customer.address.geo.lng >= 0">{{ customer.address.geo.lng}}</span> <br>
+          <span>INR</span>
+        </td>
+        <td>
+          {{deposit}} <br>
+          <span>INR</span>
+        </td>
+        <td>
+          <a class="active">active</a>
+        </td>
+        <td><a><img src="src/assets/image/icon.png"/></a></td>
+        <td><a><img src="src/assets/image/icon.png"/></a></td>
+        <td>...</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <p></p>
+    </tfoot>
+  </table>
 </div>
